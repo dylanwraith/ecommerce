@@ -24,9 +24,13 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 	implementation("org.springframework.boot:spring-boot-starter-security")
 	implementation("org.springframework.boot:spring-boot-starter-web")
+	implementation("org.projectlombok:lombok:1.18.24")
+	implementation("org.hibernate.validator:hibernate-validator:7.0.1.Final")
+	implementation("jakarta.validation:jakarta.validation-api:3.0.0")
+
+	annotationProcessor("org.projectlombok:lombok:1.18.24")
 
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
-
 
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("org.springframework.security:spring-security-test")
