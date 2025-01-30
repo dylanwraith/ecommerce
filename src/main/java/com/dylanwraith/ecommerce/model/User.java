@@ -2,11 +2,13 @@ package com.dylanwraith.ecommerce.model;
 
 import jakarta.persistence.*;
 
+import lombok.Data;
+
 import java.util.List;
-import java.util.UUID;
 
 @Entity
 @Table(name = "user")
+@Data
 public class User {
 
     @Id
