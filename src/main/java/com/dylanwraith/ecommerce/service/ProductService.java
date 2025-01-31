@@ -6,6 +6,7 @@ import com.dylanwraith.ecommerce.repository.ProductRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -19,6 +20,14 @@ public class ProductService {
 
     public Optional<Product> getProductById(Long id) {
         return productRepository.findById(id);
+    }
+
+    public List<Product> getByProductIds(List<Long> ids) {
+        List<Product> products = productRepository.findAllById(ids);
+        if (products.size() != ids.size()) throw new EntityNotFoundException(
+                String.format("Expected %s products but found %s", ids.size(), products.size()));
+
+        return products;
     }
 
     public Product createProduct(ProductDTO productDTO) {
