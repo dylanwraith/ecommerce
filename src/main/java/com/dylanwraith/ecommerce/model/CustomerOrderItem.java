@@ -1,11 +1,14 @@
 package com.dylanwraith.ecommerce.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
+import lombok.Data;
 
 import java.math.BigDecimal;
 
 @Entity
 @Table(name = "customer_order_item")
+@Data
 public class CustomerOrderItem {
 
     @Id
@@ -21,6 +24,7 @@ public class CustomerOrderItem {
 
     @ManyToOne
     @JoinColumn(name = "customer_order_id", nullable = false) // Foreign key column to 'customer_order' table
+    @JsonBackReference
     private CustomerOrder customerOrder;
 
     @OneToOne
