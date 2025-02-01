@@ -18,6 +18,7 @@ repositories {
 }
 
 dependencies {
+	implementation("com.okta.spring:okta-spring-boot-starter:3.0.5")
 	implementation("com.mysql:mysql-connector-j:8.2.0")
 	implementation("org.flywaydb:flyway-core:11.2.0")
 	implementation("org.flywaydb:flyway-mysql:11.2.0")
