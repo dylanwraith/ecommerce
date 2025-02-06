@@ -1,17 +1,13 @@
 package com.dylanwraith.ecommerce.controller;
 
 import com.dylanwraith.ecommerce.dto.CustomerOrderDTO;
-import com.dylanwraith.ecommerce.dto.ProductDTO;
 import com.dylanwraith.ecommerce.model.CustomerOrder;
-import com.dylanwraith.ecommerce.model.Product;
 import com.dylanwraith.ecommerce.service.CustomerOrderService;
-import com.dylanwraith.ecommerce.service.ProductService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/customer-order")

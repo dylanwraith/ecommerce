@@ -1,12 +1,21 @@
 # ecommerce
 
-### Local Development Setup
+### Local APP Development Setup
+1. Install Node.js
+2. Navigate to `ecommerce/app`
+3. Run `npm install`
+4. Run `npm start`
+5. App should start at `localhost:3000` unless configured for a different port
+
+### Local API Development Setup
 1. Install MySQL 8.0.41
 2. Start MySQL 
 3. Create `ecommerce` MySQL table 
 4. Add environment variables for `ECOMMERCE_MYSQL_DB_USER` and `ECOMMERCE_MYSQL_DB_PASSWORD`
 5. Create MySQL user for `ECOMMERCE_MYSQL_DB_USER` and `ECOMMERCE_MYSQL_DB_PASSWORD`
-6. Run `./gradlew start` from project directory in terminal
+6. Go through Auth0 setup and configure respective environment variables
+7. Run `./gradlew start` from `ecommerce/api`
+8. Api should start at `localhost:8080` unless configured for a different port
 
 ### Auth0 Setup
 1. Create Auth0 account
