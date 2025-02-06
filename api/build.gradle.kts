@@ -4,7 +4,7 @@ plugins {
 	id("io.spring.dependency-management") version "1.1.7"
 }
 
-group = "com.dylanwraith"
+group = "com.dylanwraith.ecommerce"
 version = "0.0.1-SNAPSHOT"
 
 java {
@@ -40,4 +40,15 @@ dependencies {
 
 tasks.withType<Test> {
 	useJUnitPlatform()
+}
+
+sourceSets {
+	main {
+		java {
+			srcDir("api/src/main/java")
+		}
+		resources {
+			srcDir("api/src/main/resources")
+		}
+	}
 }
