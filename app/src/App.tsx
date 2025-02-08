@@ -1,18 +1,17 @@
-import React from 'react';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
+import HomePage from 'pages/HomePage';
+import ProductPage from 'pages/ProductPage';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Hello World! :-)
-        </p>
-      </header>
-    </div>
-  );
+	return (
+		<Router>
+			<Routes>
+				<Route path='/' element={<HomePage />} />
+				<Route path='/product/:productId' element={<ProductPage />} />
+			</Routes>
+		</Router>
+	);
 }
 
 export default App;
