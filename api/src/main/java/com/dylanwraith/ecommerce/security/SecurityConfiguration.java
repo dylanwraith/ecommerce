@@ -42,9 +42,9 @@ public class SecurityConfiguration {
         http
                 // Secure endpoints
                 .authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers("/").permitAll()
+                        .requestMatchers("/private").authenticated()
                         .requestMatchers("/private-admin").hasRole("admin")
-                        .anyRequest().authenticated()
+                        .anyRequest().permitAll()
                 )
                 // Manually map `audience` for authorization requests to Auth0
                 .oauth2Login(oauth2 -> oauth2
@@ -54,6 +54,8 @@ public class SecurityConfiguration {
                                 )
                         )
                 )
+                // Enable CORS and pick up configuration from WebConfig.java
+                .cors(withDefaults())
                 // Quality of life / UX enhancements
                 .oauth2ResourceServer(jwt -> jwt.jwt(withDefaults()))
                 .logout(logout -> logout.addLogoutHandler(logoutHandler()));
